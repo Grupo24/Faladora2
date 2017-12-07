@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="com.gps1718.g24.faladora.MainActivity"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/LayoutVisor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textoVisor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginVertical="1dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:gravity="end"
+            android:text="Visor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutButoes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/LayoutNumeros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:id="@+id/TopRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="5">
+
+                <Button
+                    android:id="@+id/butaoUm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/butaoDois"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="2"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoTres"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/butaoQuatro"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="4"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoCinco"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/BotRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/butaoSeis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="6"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoSete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/butaoOito"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="8"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoNove"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/butaoZero"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="0"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/butaoMais"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="+"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoMenos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="-" />
+
+                <Button
+                    android:id="@+id/butaoVezes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="X"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoDiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="/" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/butaoApagar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#00AE0C"
+                    android:text="C" />
+
+                <Button
+                    android:id="@+id/butaoApagTudo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="CE"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/butaoIgual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginVertical="2dp"
+                    android:layout_weight="2"
+                    android:autoSizeTextType="uniform"
+                    android:autoText="true"
+                    android:background="#316834"
+                    android:text="="
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
