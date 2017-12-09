@@ -24,8 +24,7 @@
             android:layout_marginVertical="1dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:gravity="end"
-            android:text="Visor" />
+            android:gravity="end" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,10 +57,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="1" />
+                    android:text="1"
+                    android:onClick="onNumero"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoDois"
@@ -70,11 +70,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="2"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onNumero"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoTres"
@@ -83,10 +84,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="3" />
+                    android:text="3"
+                    android:onClick="onNumero"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoQuatro"
@@ -95,11 +97,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="4"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onNumero"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoCinco"
@@ -108,10 +111,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="5" />
+                    android:text="5"
+                    android:onClick="onNumero"
+                    android:textSize="50sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,11 +131,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="6"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onNumero"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoSete"
@@ -140,10 +145,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="7" />
+                    android:text="7"
+                    android:onClick="onNumero"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoOito"
@@ -152,11 +158,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="8"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onNumero"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoNove"
@@ -165,10 +172,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="9" />
+                    android:text="9"
+                    android:onClick="onNumero"
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/butaoZero"
@@ -177,11 +185,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onNumero"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -204,11 +213,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="+"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onSoma"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/butaoMenos"
@@ -217,10 +227,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="-" />
+                    android:text="-"
+                    android:onClick="onSub"
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/butaoVezes"
@@ -229,11 +240,11 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="X"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/butaoDiv"
@@ -242,10 +253,10 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="/" />
+                    android:text="/"
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -261,10 +272,10 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:text="C" />
+                    android:text="C"
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/butaoApagTudo"
@@ -273,11 +284,12 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="CE"
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onClear"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/butaoIgual"
@@ -286,11 +298,13 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginVertical="2dp"
                     android:layout_weight="2"
-                    android:autoSizeTextType="uniform"
-                    android:autoText="true"
+                    android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="="
-                    android:textColor="#FFFFFF" />
+                    android:onClick="onEqual"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp"
+                    android:longClickable="true"/>
 
             </LinearLayout>
         </LinearLayout>
