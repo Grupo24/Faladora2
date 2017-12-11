@@ -60,7 +60,6 @@
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
                     android:text="1"
-                    android:onClick="onNumero"
                     android:textSize="50sp" />
 
                 <Button
@@ -73,7 +72,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="2"
-                    android:onClick="onNumero"
                     android:textColor="#FFFFFF"
                     android:textSize="50sp" />
 
@@ -87,7 +85,6 @@
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
                     android:text="3"
-                    android:onClick="onNumero"
                     android:textSize="50sp" />
 
                 <Button
@@ -100,7 +97,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="4"
-                    android:onClick="onNumero"
                     android:textColor="#FFFFFF"
                     android:textSize="50sp" />
 
@@ -114,7 +110,6 @@
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
                     android:text="5"
-                    android:onClick="onNumero"
                     android:textSize="50sp" />
             </LinearLayout>
 
@@ -134,7 +129,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="6"
-                    android:onClick="onNumero"
                     android:textColor="#FFFFFF"
                     android:textSize="50sp" />
 
@@ -148,7 +142,6 @@
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
                     android:text="7"
-                    android:onClick="onNumero"
                     android:textSize="50sp" />
 
                 <Button
@@ -161,7 +154,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="8"
-                    android:onClick="onNumero"
                     android:textColor="#FFFFFF"
                     android:textSize="50sp" />
 
@@ -175,7 +167,6 @@
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
                     android:text="9"
-                    android:onClick="onNumero"
                     android:textSize="50sp" />
 
                 <Button
@@ -188,7 +179,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="0"
-                    android:onClick="onNumero"
                     android:textColor="#FFFFFF"
                     android:textSize="50sp" />
             </LinearLayout>
@@ -216,7 +206,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="+"
-                    android:onClick="onSoma"
                     android:textColor="#FFFFFF"
                     android:textSize="40sp" />
 
@@ -230,7 +219,6 @@
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
                     android:text="-"
-                    android:onClick="onSub"
                     android:textSize="40sp" />
 
                 <Button
@@ -242,7 +230,6 @@
                     android:layout_weight="1"
                     android:autoSizeTextType="none"
                     android:background="#316834"
-                    android:onClick="onMult"
                     android:text="X"
                     android:textColor="#FFFFFF"
                     android:textSize="40sp" />
@@ -256,7 +243,6 @@
                     android:layout_weight="1"
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
-                    android:onClick="onDiv"
                     android:text="/"
                     android:textSize="40sp" />
             </LinearLayout>
@@ -289,7 +275,6 @@
                     android:autoSizeTextType="none"
                     android:background="#316834"
                     android:text="CE"
-                    android:onClick="onClear"
                     android:textColor="#FFFFFF"
                     android:textSize="40sp" />
 
@@ -302,11 +287,10 @@
                     android:layout_weight="2"
                     android:autoSizeTextType="none"
                     android:background="#316834"
+                    android:longClickable="true"
                     android:text="="
-                    android:onClick="onEqual"
                     android:textColor="#FFFFFF"
-                    android:textSize="40sp"
-                    android:longClickable="true"/>
+                    android:textSize="40sp" />
 
             </LinearLayout>
         </LinearLayout>
