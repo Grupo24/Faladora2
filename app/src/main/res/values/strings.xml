@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Faladora</string>
+
+    <string-array name="tutorial">
+        <item>"?"</item>
+        <item>Selecionou a opção tutorial: As teclas com números estão dispostos</item>
+            <item>na parte esquerda do ecrã e as operações na parte direita. Os números pares são os botões mais escuros com números brancos e os números ímpares são os botões mais claros com números pretos. As operações que pode realizar são as seguintes por esta ordem, de cima para baixo: Soma, Subtração, Multiplicação e Divisão. Quando pretender finalizar a operação carregue no botão igual no canto inferior direito, que vai abrir uma janela a mostrar o resultado do seu cálculo. Os números e sinais que escrever antes de pressionar o botão “=”  vão aparecer no display no canto superior direito da aplicação</item>
+    </string-array>
 </resources>
