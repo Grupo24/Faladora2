@@ -55,6 +55,36 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void onMult(View v) {
+        Button b = (Button) v;
+        TextView tv = (TextView) findViewById(R.id.textoVisor);
+
+        if (firstOperation) {
+            soma *= Double.parseDouble(tv.getText().toString());
+            tv.setText("");
+            lastOperation = b.getText().toString();
+        } else {
+            tv.setText("");
+            lastOperation = b.getText().toString();
+            firstOperation = true;
+        }
+    }
+
+    public void onDiv(View v) {
+        Button b = (Button) v;
+        TextView tv = (TextView) findViewById(R.id.textoVisor);
+
+        if (firstOperation) {
+            soma /= Double.parseDouble(tv.getText().toString());
+            tv.setText("");
+            lastOperation = b.getText().toString();
+        } else {
+            tv.setText("");
+            lastOperation = b.getText().toString();
+            firstOperation = true;
+        }
+    }
+
     public void onEqual(View v) {
         TextView tv = (TextView) findViewById(R.id.textoVisor);
         switch (lastOperation) {
@@ -64,6 +94,16 @@ public class MainActivity extends Activity {
                 break;
             case "-":
                 soma -= Double.parseDouble(tv.getText().toString());
+                tv.setText(String.valueOf(soma));
+
+                break;
+            case "X":
+                soma *= Double.parseDouble(tv.getText().toString());
+                tv.setText(String.valueOf(soma));
+
+                break;
+            case "/":
+                soma /= Double.parseDouble(tv.getText().toString());
                 tv.setText(String.valueOf(soma));
 
                 break;

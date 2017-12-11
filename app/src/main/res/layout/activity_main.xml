@@ -242,6 +242,7 @@
                     android:layout_weight="1"
                     android:autoSizeTextType="none"
                     android:background="#316834"
+                    android:onClick="onMult"
                     android:text="X"
                     android:textColor="#FFFFFF"
                     android:textSize="40sp" />
@@ -255,6 +256,7 @@
                     android:layout_weight="1"
                     android:autoSizeTextType="none"
                     android:background="#00AE0C"
+                    android:onClick="onDiv"
                     android:text="/"
                     android:textSize="40sp" />
             </LinearLayout>
