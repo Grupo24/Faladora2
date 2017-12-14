@@ -6,18 +6,15 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
-import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
@@ -39,13 +36,17 @@ public class MainActivity extends Activity {
     MediaPlayer numsete;
     MediaPlayer numoito;
     MediaPlayer numnove;
+    MediaPlayer numzero;
 
+    MediaPlayer somar;
     MediaPlayer sub;
     MediaPlayer mult;
     MediaPlayer div;
     MediaPlayer apagar;
     MediaPlayer apagado;
+    MediaPlayer intro;
     MediaPlayer apagart;
+    MediaPlayer tutintro;
     MediaPlayer igual;
 
     MediaPlayer notif;
@@ -67,6 +68,8 @@ public class MainActivity extends Activity {
         numsete = MediaPlayer.create(MainActivity.this, R.raw.num7);
         numoito = MediaPlayer.create(MainActivity.this, R.raw.num8);
         numnove = MediaPlayer.create(MainActivity.this, R.raw.num9);
+        numzero = MediaPlayer.create(MainActivity.this, R.raw.num0);
+        somar = MediaPlayer.create(MainActivity.this, R.raw.soma);
         sub = MediaPlayer.create(MainActivity.this, R.raw.sub);
         mult = MediaPlayer.create(MainActivity.this, R.raw.mult);
         div = MediaPlayer.create(MainActivity.this, R.raw.div);
@@ -75,6 +78,8 @@ public class MainActivity extends Activity {
         apagart = MediaPlayer.create(MainActivity.this, R.raw.apagartudo);
         igual = MediaPlayer.create(MainActivity.this, R.raw.igual);
         notif = MediaPlayer.create(MainActivity.this, R.raw.notif);
+        intro = MediaPlayer.create(MainActivity.this, R.raw.intro);
+        tutintro = MediaPlayer.create(MainActivity.this, R.raw.tut1);
 
 
         //Definição de todos os botões click e long press
@@ -376,6 +381,8 @@ public class MainActivity extends Activity {
         TextView tv = (TextView) findViewById(R.id.textoVisor);
         String str = b.getText().toString();
         tv.setText(tv.getText() + str);
+        intro.start();
+        lastNum();
     }
 
     //Função long press dos botões dos operadores (sem componente de som)
@@ -386,6 +393,26 @@ public class MainActivity extends Activity {
             soma = Double.parseDouble(tv.getText().toString());
             tv.setText("");
             lastOperation = b.getText().toString();
+            intro.start();
+            try {
+                TimeUnit.MILLISECONDS.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            switch (lastOperation) {
+                case "+":
+                    somar.start();
+                    break;
+                case "-":
+                    sub.start();
+                    break;
+                case "X":
+                    mult.start();
+                    break;
+                case "/":
+                    div.start();
+                    break;
+            }
             firstOperation = false;
         } else {
             playPling();
@@ -411,8 +438,6 @@ public class MainActivity extends Activity {
                     break;
                 case "/":
                     soma = soma / Double.parseDouble(tv.getText().toString());
-
-
                     break;
             }
 
@@ -425,7 +450,7 @@ public class MainActivity extends Activity {
             lastOperation = "";
             firstOperation = true;
         } else {
-            //playPling
+            playPling();
         }
     }
 
@@ -455,6 +480,7 @@ public class MainActivity extends Activity {
 
     public void onSound(View v) {
         Button b = (Button) v;
+        TextView tv = (TextView) findViewById(R.id.textoVisor);
 
         switch ((String) b.getText()) {
             case "1":
@@ -485,10 +511,10 @@ public class MainActivity extends Activity {
                 numnove.start();
                 break;
             case "0":
-                //
+                numzero.start();
                 break;
             case "+":
-                //
+                somar.start();
                 break;
             case "-":
                 sub.start();
@@ -506,11 +532,15 @@ public class MainActivity extends Activity {
                 apagart.start();
                 break;
             case "C":
-                apagar.start();
-                lastNum();
+                if (tv.getText().equals("")) {
+                    playPling();
+                } else {
+                    apagar.start();
+                    lastNum();
+                }
                 break;
             case "?":
-                //
+                tutintro.start();
                 break;
             default:
                 playPling();
@@ -572,7 +602,7 @@ public class MainActivity extends Activity {
                 numnove.start();
                 break;
             case "0":
-                //
+                numzero.start();
                 break;
         }
 
