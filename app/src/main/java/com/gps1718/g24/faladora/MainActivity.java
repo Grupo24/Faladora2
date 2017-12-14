@@ -4,13 +4,23 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
+
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity {
     //lastOperation grava a operação a realizar
@@ -20,6 +30,25 @@ public class MainActivity extends Activity {
     //variavel que coleta as informações do ecrã/resultado da conta
     double soma = 0;
 
+    MediaPlayer numum;
+    MediaPlayer numdois;
+    MediaPlayer numtres;
+    MediaPlayer numquatro;
+    MediaPlayer numcinco;
+    MediaPlayer numseis;
+    MediaPlayer numsete;
+    MediaPlayer numoito;
+    MediaPlayer numnove;
+
+    MediaPlayer sub;
+    MediaPlayer mult;
+    MediaPlayer div;
+    MediaPlayer apagar;
+    MediaPlayer apagado;
+    MediaPlayer apagart;
+    MediaPlayer igual;
+
+    MediaPlayer notif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +58,32 @@ public class MainActivity extends Activity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+        numum = MediaPlayer.create(MainActivity.this, R.raw.num1);
+        numdois = MediaPlayer.create(MainActivity.this, R.raw.num2);
+        numtres = MediaPlayer.create(MainActivity.this, R.raw.num3);
+        numquatro = MediaPlayer.create(MainActivity.this, R.raw.num4);
+        numcinco = MediaPlayer.create(MainActivity.this, R.raw.num5);
+        numseis = MediaPlayer.create(MainActivity.this, R.raw.num6);
+        numsete = MediaPlayer.create(MainActivity.this, R.raw.num7);
+        numoito = MediaPlayer.create(MainActivity.this, R.raw.num8);
+        numnove = MediaPlayer.create(MainActivity.this, R.raw.num9);
+        sub = MediaPlayer.create(MainActivity.this, R.raw.sub);
+        mult = MediaPlayer.create(MainActivity.this, R.raw.mult);
+        div = MediaPlayer.create(MainActivity.this, R.raw.div);
+        apagar = MediaPlayer.create(MainActivity.this, R.raw.apagar);
+        apagado = MediaPlayer.create(MainActivity.this, R.raw.apagado);
+        apagart = MediaPlayer.create(MainActivity.this, R.raw.apagartudo);
+        igual = MediaPlayer.create(MainActivity.this, R.raw.igual);
+        notif = MediaPlayer.create(MainActivity.this, R.raw.notif);
+
+
         //Definição de todos os botões click e long press
         //Butão 1
         Button btt1;
         btt1 = findViewById(R.id.butaoUm);
         btt1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -51,7 +99,7 @@ public class MainActivity extends Activity {
         btt2 = (Button) findViewById(R.id.butaoDois);
         btt2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -67,7 +115,7 @@ public class MainActivity extends Activity {
         btt3 = (Button) findViewById(R.id.butaoTres);
         btt3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -83,7 +131,7 @@ public class MainActivity extends Activity {
         btt4 = (Button) findViewById(R.id.butaoQuatro);
         btt4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -99,7 +147,7 @@ public class MainActivity extends Activity {
         btt5 = (Button) findViewById(R.id.butaoCinco);
         btt5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -115,7 +163,7 @@ public class MainActivity extends Activity {
         btt6 = (Button) findViewById(R.id.butaoSeis);
         btt6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -131,7 +179,7 @@ public class MainActivity extends Activity {
         btt7 = (Button) findViewById(R.id.butaoSete);
         btt7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -147,7 +195,7 @@ public class MainActivity extends Activity {
         btt8 = (Button) findViewById(R.id.butaoOito);
         btt8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -163,7 +211,7 @@ public class MainActivity extends Activity {
         btt9 = (Button) findViewById(R.id.butaoNove);
         btt9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -179,7 +227,7 @@ public class MainActivity extends Activity {
         btt0 = (Button) findViewById(R.id.butaoZero);
         btt0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -195,7 +243,7 @@ public class MainActivity extends Activity {
         bttMais = (Button) findViewById(R.id.butaoMais);
         bttMais.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -211,7 +259,7 @@ public class MainActivity extends Activity {
         bttMenos = (Button) findViewById(R.id.butaoMenos);
         bttMenos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -227,7 +275,7 @@ public class MainActivity extends Activity {
         bttMult = (Button) findViewById(R.id.butaoVezes);
         bttMult.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -243,7 +291,7 @@ public class MainActivity extends Activity {
         bttDiv = (Button) findViewById(R.id.butaoDiv);
         bttDiv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -259,7 +307,7 @@ public class MainActivity extends Activity {
         bttC = (Button) findViewById(R.id.butaoApagar);
         bttC.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -275,7 +323,7 @@ public class MainActivity extends Activity {
         bttCE = (Button) findViewById(R.id.butaoApagTudo);
         bttCE.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -291,7 +339,7 @@ public class MainActivity extends Activity {
         bttEq = (Button) findViewById(R.id.butaoIgual);
         bttEq.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -307,7 +355,7 @@ public class MainActivity extends Activity {
         bttTut = (Button) findViewById(R.id.butaoTut);
         bttTut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //onSound(v);
+                onSound(v);
             }
         });
 
@@ -315,8 +363,7 @@ public class MainActivity extends Activity {
             public boolean onLongClick(View v) {
 
                 DialogFragment newFragment = new onTut();
-                newFragment.show(getFragmentManager(), "Missiles");
-
+                newFragment.show(getFragmentManager(), "Tut");
                 return true;
             }
         });
@@ -341,7 +388,7 @@ public class MainActivity extends Activity {
             lastOperation = b.getText().toString();
             firstOperation = false;
         } else {
-            //playPling
+            playPling();
         }
     }
 
@@ -397,20 +444,160 @@ public class MainActivity extends Activity {
 
         if (tv.getText().toString() != "") {
             StringBuilder aux = new StringBuilder(tv.getText());
+            apagado.start();
+            lastNum();
             aux.deleteCharAt(aux.length() - 1);
             tv.setText(aux.toString());
         } else {
-            //playPling
+            playPling();
         }
+    }
+
+    public void onSound(View v) {
+        Button b = (Button) v;
+
+        switch ((String) b.getText()) {
+            case "1":
+                numum.start();
+                break;
+            case "2":
+                numdois.start();
+                break;
+            case "3":
+                numtres.start();
+                break;
+            case "4":
+                numquatro.start();
+                break;
+            case "5":
+                numcinco.start();
+                break;
+            case "6":
+                numseis.start();
+                break;
+            case "7":
+                numsete.start();
+                break;
+            case "8":
+                numoito.start();
+                break;
+            case "9":
+                numnove.start();
+                break;
+            case "0":
+                //
+                break;
+            case "+":
+                //
+                break;
+            case "-":
+                sub.start();
+                break;
+            case "X":
+                mult.start();
+                break;
+            case "/":
+                div.start();
+                break;
+            case "=":
+                igual.start();
+                break;
+            case "CE":
+                apagart.start();
+                break;
+            case "C":
+                apagar.start();
+                lastNum();
+                break;
+            case "?":
+                //
+                break;
+            default:
+                playPling();
+                break;
+
+        }
+
+
+    }
+
+    public void playPling() {
+        try {
+            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+            r.play();
+            if (!r.isPlaying()) {
+                notif.start();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void lastNum() {
+        TextView tv = (TextView) findViewById(R.id.textoVisor);
+        StringBuilder aux = new StringBuilder(tv.getText());
+        try {
+            TimeUnit.MILLISECONDS.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        switch ("" + aux.charAt(aux.length() - 1)) {
+            case "1":
+                numum.start();
+                break;
+            case "2":
+                numdois.start();
+                break;
+            case "3":
+                numtres.start();
+                break;
+            case "4":
+                numquatro.start();
+                break;
+            case "5":
+                numcinco.start();
+                break;
+            case "6":
+                numseis.start();
+                break;
+            case "7":
+                numsete.start();
+                break;
+            case "8":
+                numoito.start();
+                break;
+            case "9":
+                numnove.start();
+                break;
+            case "0":
+                //
+                break;
+        }
+
     }
 
     //Função long press do botão Tutorial (sem componente de som)
     public static class onTut extends DialogFragment {
+        MediaPlayer tutlido;
+
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setMessage("Selecionou a opção tutorial: As teclas com números estão dispostos na parte esquerda do ecrã e as operações na parte direita. Os números pares são os botões mais escuros com números brancos e os números ímpares são os botões mais claros com números pretos. As operações que pode realizar são as seguintes por esta ordem, de cima para baixo: Soma, Subtração, Multiplicação e Divisão. Quando pretender finalizar a operação carregue no botão igual no canto inferior direito, que vai abrir uma janela a mostrar o resultado do seu cálculo. Os números e sinais que escrever antes de pressionar o botão “=”  vão aparecer no display no canto superior direito da aplicação");
+
+
+            tutlido = MediaPlayer.create(builder.getContext(), R.raw.tut);
+            tutlido.start();
+
             return builder.create();
+        }
+
+        @Override
+        public void onDismiss(DialogInterface dialog) {
+            tutlido.stop();
+            super.onDismiss(dialog);
         }
     }
 
