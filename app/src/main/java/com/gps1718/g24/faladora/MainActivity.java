@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
 
+
 public class MainActivity extends Activity {
     //lastOperation grava a operação a realizar
     String lastOperation = "";
@@ -379,10 +380,14 @@ public class MainActivity extends Activity {
     public void onNumero(View v) {
         Button b = (Button) v;
         TextView tv = (TextView) findViewById(R.id.textoVisor);
-        String str = b.getText().toString();
-        tv.setText(tv.getText() + str);
-        intro.start();
-        lastNum();
+        if ( tv.getText().equals("") || Double.parseDouble(tv.getText().toString()) < 10000 ) {
+            String str = b.getText().toString();
+            tv.setText(tv.getText() + str);
+            intro.start();
+            lastNum();
+        } else {
+            playPling();
+        }
     }
 
     //Função long press dos botões dos operadores (sem componente de som)
@@ -419,36 +424,40 @@ public class MainActivity extends Activity {
         }
     }
 
-    //Função long press do botão igual (sem componente de som)
+    //Função long press do botão igual (com componente de som)
     public void onEqual(View v) {
         TextView tv = (TextView) findViewById(R.id.textoVisor);
+        int error = 0; //Sem erros
 
         if (lastOperation != "" && (tv.getText().toString() != "")) {
-            switch (lastOperation) {
-                case "+":
-                    soma += Double.parseDouble(tv.getText().toString());
-                    break;
-                case "-":
-                    soma -= Double.parseDouble(tv.getText().toString());
+            if (Double.parseDouble(tv.getText().toString()) == 0 && lastOperation.equals("/")) {
+                error = 1; //Erro divisão por 0
+            } else {
+                switch (lastOperation) {
+                    case "+":
+                        soma += Double.parseDouble(tv.getText().toString());
+                        break;
+                    case "-":
+                        soma -= Double.parseDouble(tv.getText().toString());
 
-                    break;
-                case "X":
-                    soma = soma * Double.parseDouble(tv.getText().toString());
+                        break;
+                    case "X":
+                        soma = soma * Double.parseDouble(tv.getText().toString());
 
-                    break;
-                case "/":
-                    soma = soma / Double.parseDouble(tv.getText().toString());
-                    break;
+                        break;
+                    case "/":
+                        soma = soma / Double.parseDouble(tv.getText().toString());
+                        break;
+                }
             }
-
+            if (soma > 1000000000 || soma < -100000000) {
+                error = 2; //Numero dimensões grandes
+            }
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("Resultado", soma);
+            intent.putExtra("Erro", error);
             startActivity(intent);
-
-            soma = 0;
-            tv.setText("");
-            lastOperation = "";
-            firstOperation = true;
+            onCE(v);
         } else {
             playPling();
         }
