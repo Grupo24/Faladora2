@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
     MediaPlayer apagart;
     MediaPlayer tutintro;
     MediaPlayer igual;
+    MediaPlayer tdapagado;
 
     MediaPlayer notif;
 
@@ -81,6 +82,7 @@ public class MainActivity extends Activity {
         notif = MediaPlayer.create(MainActivity.this, R.raw.notif);
         intro = MediaPlayer.create(MainActivity.this, R.raw.intro);
         tutintro = MediaPlayer.create(MainActivity.this, R.raw.tut1);
+        tdapagado = MediaPlayer.create(MainActivity.this,R.raw.tudoapagado);
 
 
         //Definição de todos os botões click e long press
@@ -465,6 +467,7 @@ public class MainActivity extends Activity {
 
     //Função long press do botão Apagar Tudo (sem componente de som)
     public void onCE(View v) {
+        tdapagado.start();
         TextView tv = (TextView) findViewById(R.id.textoVisor);
         tv.setText("");
         soma = 0;
