@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
         notif = MediaPlayer.create(MainActivity.this, R.raw.notif);
         intro = MediaPlayer.create(MainActivity.this, R.raw.intro);
         tutintro = MediaPlayer.create(MainActivity.this, R.raw.tut1);
-        tdapagado = MediaPlayer.create(MainActivity.this,R.raw.tudoapagado);
+        tdapagado = MediaPlayer.create(MainActivity.this, R.raw.tudoapagado);
 
 
         //Definição de todos os botões click e long press
@@ -337,6 +337,7 @@ public class MainActivity extends Activity {
 
         bttCE.setOnLongClickListener(new View.OnLongClickListener() {
             public boolean onLongClick(View v) {
+                tdapagado.start();
                 onCE(v);
                 return true;
             }
@@ -382,7 +383,7 @@ public class MainActivity extends Activity {
     public void onNumero(View v) {
         Button b = (Button) v;
         TextView tv = (TextView) findViewById(R.id.textoVisor);
-        if ( tv.getText().equals("") || Double.parseDouble(tv.getText().toString()) < 10000 ) {
+        if (tv.getText().equals("") || Double.parseDouble(tv.getText().toString()) < 10000) {
             String str = b.getText().toString();
             tv.setText(tv.getText() + str);
             intro.start();
@@ -467,7 +468,7 @@ public class MainActivity extends Activity {
 
     //Função long press do botão Apagar Tudo (sem componente de som)
     public void onCE(View v) {
-        tdapagado.start();
+
         TextView tv = (TextView) findViewById(R.id.textoVisor);
         tv.setText("");
         soma = 0;
